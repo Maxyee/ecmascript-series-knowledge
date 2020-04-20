@@ -29,3 +29,23 @@ var doubleNums = nums.map(function (e) {
 });
 
 ```
+
+## Installation and Process Output
+
+At the very beginning, we have to install nodejs to our local machine. below I am giving my another documentation link where I discussed how to install nodejs :
+
+[Install Nodejs to Local Machine](https://github.com/Maxyee/nodejs_logics/tree/master/InstallNodejs)
+
+However, after installing nodejs we have to create a new project folder and make a `package.json` file. In my case, I created a folder called Babel. Navigate to your folder you can use your own folder name. Then we need to run a command for making our package.json file
+
+`npm init`
+
+finllay give your information you will get your `package.json` file.
+
+
+
+
+
+
+
+

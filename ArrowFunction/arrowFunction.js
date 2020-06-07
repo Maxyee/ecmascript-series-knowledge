@@ -79,9 +79,9 @@ console.log(lordify("DaryleArrow"))
 
 
 //-------------Arrow Function Do Not Block (this)----------------
-//old way
+//old way do not support (this)
 var tahoe = {
-    resorts:[],
+    resorts: ["Kirkwood","Squaw","Alpine","Heavenly","Northstar",],
     print: function(delay=1000){
         
         setTimeout(function(){
@@ -92,9 +92,9 @@ var tahoe = {
 
 tahoe.print()
 
-//new way
+//new way support (this)
 var tahoe = {
-    resorts:[],
+    resorts: ["Kirkwood","Squaw","Alpine","Heavenly","Northstar",],
     print:function(delay=1000){
 
         setTimeout(()=> {
@@ -103,4 +103,45 @@ var tahoe = {
     }
 }
 tahoe.print()
+
+// if we change the print object with arrow function calling it will not work for (this)
+var tahoe = {
+    resorts: ["Kirkwood","Squaw","Alpine","Heavenly","Northstar",],
+    print:(delay = 1000) => {   
+        
+        setTimeout(() => {
+            console.log(this.resorts.join(","))  //error cannot read property resorts
+        }, delay)
+    }
+}
+tahoe.print()
+
+
+//now for fixing previous code
+
+var tahoe = {
+    resorts: ["Kirkwood","Squaw","Alpine","Heavenly","Northstar",],
+    print:(delay = 1000) => {    
+        
+        setTimeout(() => {
+            console.log(this === window)
+        }, delay)
+    }
+}
+tahoe.print()
+
+// now cloning pervious uppor code 
+// and use the normal function again into print object
+// it will through error
+var tahoe = {
+    resorts: ["Kirkwood","Squaw","Alpine","Heavenly","Northstar",],
+    print:function(delay = 1000){    
+        
+        setTimeout(() => {
+            console.log(this === window)
+        }, delay)
+    }
+}
+tahoe.print()  // false
+
 //---------------------------------------------------------------`

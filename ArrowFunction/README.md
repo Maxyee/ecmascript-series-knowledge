@@ -10,8 +10,8 @@ console.log(lordify("Daryle"))
 
 //new way
 var lordifynew = firstname => `${firstname} of Canterbury` 
-console.log(lordify("DaleArrow"))
-console.log(lordify("DaryleArrow"))
+console.log(lordifynew("DaleArrow"))
+console.log(lordifynew("DaryleArrow"))
 //---------------------------------------------------------------
 
 
@@ -25,7 +25,7 @@ console.log(lordify())
 
 //new way
 var lordifynew = firstname => `DaleArrow of Canterbury` 
-console.log(lordify())
+console.log(lordifynew())
 
 //---------------------------------------------------------------
 
@@ -42,8 +42,8 @@ console.log(lordify("Daryle","Culpeper"))
 
 //new way
 var lordifynew = (firstname, land) => `${firstname} of ${land}` 
-console.log(lordify("DaleArrow","Maryland"))
-console.log(lordify("DaryleArrow","Culpeper"))
+console.log(lordifynew("DaleArrow","Maryland"))
+console.log(lordifynew("DaryleArrow","Culpeper"))
 //---------------------------------------------------------------`
 
 
@@ -75,8 +75,8 @@ var lordifynew = (firstname,land) => {
 
     return `${firstname} of ${land}`
 } 
-console.log(lordify("DaleArrow","Maryland"))
-console.log(lordify("DaryleArrow"))
+console.log(lordifynew("DaleArrow","Maryland"))
+console.log(lordifynew("DaryleArrow"))
 //---------------------------------------------------------------`
 
 
@@ -147,7 +147,5 @@ var tahoe = {
 tahoe.print()  // false
 
 //---------------------------------------------------------------`
-
-
 
 ```

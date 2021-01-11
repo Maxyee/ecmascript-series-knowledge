@@ -142,6 +142,10 @@ var tahoe = {
         }, delay)
     }
 }
-tahoe.print()  // false
+tahoe.print();  // false
 
 //---------------------------------------------------------------`
+
+
+// test arrow function
+var Xaazz = (x, y) => { return x * y };

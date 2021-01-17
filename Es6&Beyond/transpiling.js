@@ -8,4 +8,4 @@ var obj = {
     // if the names are same   
 }
 
-obj.foo
+obj.foo;

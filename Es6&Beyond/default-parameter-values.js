@@ -23,3 +23,7 @@ foo(0, 42);        // 42
 foo( undefined, 6); // 17
 
 //---------------------------------
+function foo(x,y){
+    x = (0 in arguments ) ? x : 11;
+    y = (1 in arguments ) ? y : 31;
+}

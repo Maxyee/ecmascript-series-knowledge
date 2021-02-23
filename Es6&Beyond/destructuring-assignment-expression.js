@@ -25,4 +25,19 @@ var o = {a:1, b:2, c:3 },
 [x,y] = [z] = p;
 
 console.log(a, b, c);   // 1 2 3
-console.log(x, y, z);   // 4 5 6
+console.log(x, y, z);   // 4 5 4
+
+// -------------------------------
+
+var [,b] = foo();
+var { x, z } = bar();
+
+console.log(b, x, z);   // 2 4 6
+
+//---------------------------------
+
+var[ ,,c,d ] = foo();
+var { w, z } = bar();
+
+console.log(c, z);      // 3 6
+console.log( d, w);     // undefined undefined

@@ -41,3 +41,17 @@ var { w, z } = bar();
 
 console.log(c, z);      // 3 6
 console.log( d, w);     // undefined undefined
+
+// ---------------------------------
+
+var a = [2,3,4];
+var b = [1, ...a, 5];
+
+console.log( b );   // [1,2,3,4,5]
+
+// ----------------------------------
+
+var a = [2,3,4];
+var [b, ...c] = a;
+
+console.log( b,c );     // 2 [3,4]

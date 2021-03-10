@@ -58,3 +58,45 @@ f6( {x: 2}, { y: 3} )   // 2 3
 
 
 // Nested Defaults: Destructuring and Restructured
+
+var defaults = {
+    options: {
+        remove: true,
+        enable: false,
+        instance: {}
+    },
+    log: {
+        warn: true,
+        error: true
+    }
+};
+
+
+var config = {
+    options: {
+        remove: false,
+        instance: null
+    }
+};
+
+config.options = config.options || {};
+config.options.remove = (config.options.remove !== undefined) ? 
+    config.options.remove : defaults.options.remove;
+config.options.enable = (config.options.enable !== undefined) ?
+    config.options.enable : defaults.options.enable;
+
+// lets see in ES6 object destructuring 
+
+// config.options = config.options || {};
+// config.log = config.log || {};
+// {
+//     options: {
+//         remove: config.options.remove = defaults.options.remove,
+//         enable: config.options.enable = defaults.options.enable,
+//         instance: config.options.instance = defaults.options.instance
+//     } = {},
+//     log: {
+//         warn: config.log.warn = defaults.log.warn,
+//         error: config.log.error = defaults.log.error
+//     } = {}
+// } = config;

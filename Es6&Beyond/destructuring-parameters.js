@@ -100,3 +100,26 @@ config.options.enable = (config.options.enable !== undefined) ?
 //         error: config.log.error = defaults.log.error
 //     } = {}
 // } = config;
+
+
+// merge defaults into config
+{
+    // destructure (with default value assignment)
+    let {
+        options : {
+            remove = defaults.options.remove,
+            enable = defaults.options.enable,
+            instance = defaults.options.instance
+        } = {},
+        log : {
+            warn = defaults.log.warn,
+            error = defaults.log.error
+        } = {}
+    } = config;
+
+    // restructure
+    config = {
+        options: { remove, enable, instance },
+        log : { warn, error }
+    };
+}

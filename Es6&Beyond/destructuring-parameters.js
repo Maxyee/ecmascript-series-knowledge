@@ -123,3 +123,51 @@ config.options.enable = (config.options.enable !== undefined) ?
         log : { warn, error }
     };
 }
+
+function runSomething(o){
+    var x = Math.random(),
+        y = Math.random();
+
+    return o.something(x, y);
+}
+
+runSomething({
+    something: function something(x, y){
+        if(x > y){
+            //recursive call with `x`
+            // and `y` swapped
+            return something(y, x);
+        }
+
+        return y - x;
+    }
+});
+
+// pretty common practice when the object literal does have an identifying name
+
+var controller = {
+    makeRequest: function(/*..*/){
+        //...
+        controller.makeRequest(/*...*/);
+    }
+};
+
+//others prefer to use this to define such things:
+var controller = {
+    makeRequest: function(/*..*/){
+        //..
+        this.makeRequest(/*..*/)
+    }
+};
+
+//another this binding hazard, with the hacky var self = this, such as:
+var controller = {
+    makeRequest: function(/*..*/){
+        var self = this;
+
+        btn.addEventListener("click", function(){
+            //..
+            self.makeRequest(/*..*/);
+        }, false );
+    }
+};

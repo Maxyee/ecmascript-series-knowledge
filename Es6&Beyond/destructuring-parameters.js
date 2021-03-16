@@ -171,3 +171,23 @@ var controller = {
         }, false );
     }
 };
+
+
+// concise method
+runSomething({
+    something: function something(x, y){
+        //..
+    }
+});
+
+// refactor that function with this ES6
+
+runSomething({
+    something: function(x,y){
+        if(x > y){
+            return something(y, x);
+        }
+
+        return y - x;
+    }
+});

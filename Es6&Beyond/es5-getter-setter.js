@@ -4,13 +4,13 @@ var o = {
     set id(v) { this._id = v; }
 }
 
-o.id;
-o.id;
+o.id;       // 10
+o.id;       // 11
 
 o.id = 20;
-o.id;
+o.id;       // 20
 
 //and 
 
-o._id;
-o._id;
+o._id;      // 21
+o._id;      // 21 -- still !
